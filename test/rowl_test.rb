@@ -5,15 +5,12 @@ class RowlTest < Test::Unit::TestCase
   
     setup do
       @rowl   = Rowl::Registration.new
+      @rowl.add_notification()
       @socket = UDPSocket.open
     end
     
     should "have a socket" do
       assert_not_nil @socket
-    end
-  
-    should "be able to add a notifcation to a registration packet" do
-      assert_not_nil @rowl.add_notification()
     end
     
     should "be able to register" do
