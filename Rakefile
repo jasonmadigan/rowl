@@ -7,7 +7,7 @@ begin
     gem.name = "rowl"
     gem.summary = %Q{TODO: one-line summary of your gem}
     gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "jason.madigan@mac.com"
+    gem.email = "jason@jasonmadigan.com"
     gem.homepage = "http://github.com/jasonmadigan/rowl"
     gem.authors = ["Jason Madigan"]
     gem.add_development_dependency "thoughtbot-shoulda"
