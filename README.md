@@ -1,12 +1,12 @@
 Rowl
 ====
-Rowl is a simple [Growl] notifcation sender for Ruby.
+Rowl is a simple [Growl] notification sender for Ruby.
 
 Installation
 ============
 
 As a RubyGem
-	
+	sudo gem sources -a http://gemcutter.org (If you haven't already)
 	sudo gem install rowl
 	
 Since Rowl is tiny (and has no dependencies), you may just want to drop it into an existing project

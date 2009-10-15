@@ -4,22 +4,20 @@ class RowlTest < Test::Unit::TestCase
   context "A Rowl instance" do
   
     setup do
-      @rowl   = Rowl::Registration.new
-      @rowl.add_notification()
-      @socket = UDPSocket.open
+      @registration = Rowl::Registration.new("My Application", [{:name => "My Notification", :enabled => true}, {:name => "My Other Notification Type", :enabled => false}])
     end
     
-    should "have a socket" do
-      assert_not_nil @socket
-    end
-    
-    should "be able to register" do
-      assert_not_nil @socket.send(@rowl.payload, 0, "localhost", 9887)
+    should "have registered" do
+      assert_not_nil @registration
     end
     
     should "be able to send a notifcation as a registered application" do
-      assert_not_nil notification = Rowl::Notification.new(:title => "testy", :description => "description")
-      assert_not_nil @socket.send(notification.payload, 0, "localhost", 9887)
+      assert_not_nil Rowl::Notification.new( :application => @registration.application, 
+    							            :notification => @registration.notifications.first,
+    							            :host => "localhost",
+    							            :password => @registration.password,
+    							            :title => "Title", 
+    							            :description => "Description" )
     end
     
   end
