@@ -39,12 +39,7 @@ Load it (as a gem)
 Use it like so
 	
 	registration = Rowl::Registration.new("My Application", [{:name => "My Notification", :enabled => true}, {:name => "My Other Notification Type", :enabled => false}])
-	Rowl::Notification.new( :application => registration.application, 
-								            :notification => registration.notifications.first,
-								            :host => "localhost",
-								            :password => registration.password,
-								            :title => "Title", 
-								            :description => "Description" )
+	Rowl::Notification.new( :application => registration.application, :notification => registration.notifications.first, :host => "localhost", :password => registration.password, :title => "Title", :description => "Description" )
 							
 Patches, Bugs & Hatemail
 ========================
